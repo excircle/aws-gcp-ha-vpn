@@ -30,4 +30,6 @@ A diagram showing this connection is dipicted below.
 
 # HashiCorp Cloud Platform Dependancies
 
-### 1.)
+| File | Description |
+| - | - |
+| 1-create-hvn.tf | Creates the target HVN network |
