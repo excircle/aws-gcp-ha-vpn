@@ -33,4 +33,18 @@ A diagram showing this connection is dipicted below.
 | File | Description |
 | - | - |
 | 1-create-hvn.tf | Creates the target HVN network |
-| 2-create-vault-cluster.tf | Creates Vault Cluster |
+| 2-create-vault-cluster.tf | Creates Vault |
+
+# AWS Dependancies Part 1
+
+| File | Description |
+| - | - |
+| 3-create-aws-vpc.tf | Creates AWS VPC to connect to HCP Vault |
+| 4-create-aws-subnet.tf | Creates AWS subnet |
+| 5-create-aws-tgw.tf | Creates AWS Transit Gateway |
+| 6-create-aws-tgw-attachment.tf | - |
+| 7-aws-resource-access-manager.tf | - |
+| 8-aws-igw.tf | - |
+| 9-aws-route-table.tf | - |
+| 10-aws-sec-group.tf | - |
+| 11-aws-bastion.tf | - |

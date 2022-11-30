@@ -21,3 +21,7 @@ terraform {
 }
 
 provider "hcp" {}
+
+provider "aws" {
+  region = "us-west-2"
+}
