@@ -48,3 +48,15 @@ A diagram showing this connection is dipicted below.
 | 9-aws-route-table.tf | - |
 | 10-aws-sec-group.tf | - |
 | 11-aws-bastion.tf | - |
+
+# GCP Dependancies Part 1
+
+| File | Description |
+| - | - |
+| 12-google-ha-vpn-gateway.tf | Creates AWS VPC to connect to HCP Vault |
+
+# AWS Dependancies Part 2
+
+| File | Description |
+| - | - |
+| 13-aws-cgw.tf | Creates 2 AWS customer gateways. 1 GW for each of the 2 IP Addresses for GCP VPN |

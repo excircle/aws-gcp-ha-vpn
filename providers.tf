@@ -25,3 +25,7 @@ provider "hcp" {}
 provider "aws" {
   region = "us-west-2"
 }
+
+provider "google-beta" {
+  region = "us-east4"
+}
