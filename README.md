@@ -33,3 +33,4 @@ A diagram showing this connection is dipicted below.
 | File | Description |
 | - | - |
 | 1-create-hvn.tf | Creates the target HVN network |
+| 2-create-vault-cluster.tf | Creates Vault Cluster |
