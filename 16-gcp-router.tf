@@ -15,7 +15,7 @@ resource "google_compute_router" "router" {
   network     = "default"
   description = "Google to AWS via Transit GW connection for AWS region ${data.aws_region.current.name}"
   bgp {
-    asn = 64512
+    asn = 64513
     advertise_mode = (
       var.router_advertise_config == null
       ? null

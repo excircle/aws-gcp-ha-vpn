@@ -4,6 +4,11 @@ resource "aws_main_route_table_association" "main_vpc" {
   route_table_id = aws_route_table.main_rt.id
 }
 
+resource "aws_route_table_association" "subnet_association" {
+  subnet_id      = aws_subnet.main_subnet.id
+  route_table_id = aws_route_table.main_rt.id
+}
+
 // creates a route table that allows access to the HCP Vault cluster from the bastion subnet and configures internet egress access
 resource "aws_route_table" "main_rt" {
   vpc_id = aws_vpc.main_vpc.id
