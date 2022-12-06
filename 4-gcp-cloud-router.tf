@@ -7,6 +7,6 @@ resource "google_compute_router" "router" {
   bgp {
     asn               = 65534
     advertise_mode    = "CUSTOM"
-    advertised_groups = ["all_subnets"]
+    advertised_groups = ["ALL_SUBNETS"]
   }
 }

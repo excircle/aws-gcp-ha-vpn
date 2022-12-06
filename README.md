@@ -56,7 +56,32 @@ The following files generate the base GCP infrastructure needed for VPN establis
 | 2-gcp-subnets.tf | Creates GCP Public & Private subnets for bastion-host and app testing. |
 | 3-gcp-ha-vpn-gateway.tf | Creates HA VPN Gateway and 2 HA VPN Interfaces. This interfaces will have 2 IP Address that you'll need to add to the AWS Customer Gateway |
 | 4-gcp-cloud-router.tf | GCP Cloud Router which will advertise GCP Subnets |
+| 5-aws-vpc.tf | AWS VPC created by customer |
+| 6-aws-subnet.tf | AWS Subnet for bastion host |
+| 7-aws-customer-gateway.tf | AWS Customer Gateway Pointing to GCP HA VPN Interfaces created in `3-gcp-ha-vpn-gateway.tf` |
+| 8-aws-internet-gateway.tf | AWS IGW leading to the outside internet |
+| 9-aws-default-route-table.tf | TF File for altering AWS VPC's default route table
+| 10-aws-transit-gateway.tf | AWS Transit Gateway for exporting connections
+| 11-aws-vpn-connection.tf | VPN Connection with dynamic routing |
 
+
+# AWS Dependancies Part 1
+
+| File | Description |
+| - | - |
+| 5-aws-vpc.tf | VPC created by customer |
+| 6-aws-subnet.tf | Subnet for Bastion Host |
+| 7-aws-customer-gateway.tf | AWS customer gateways which point to the 2 GCP HA VPN Interfaces created in `3-gcp-ha-vpn-gateway.tf`. |
+| 8-aws-internet-gateway.tf | Internet Gateway For Bastion Host |
+| 8-aws-default-route-table.tf | Configuration for default route table |
+| 9-aws-transit-gateway.tf | Transit Gateway for AWS Account
+
+# GCP Dependancies Part 2
+
+The following files generate the base GCP infrastructure needed for VPN establishment
+
+| File | Description |
+| - | - |
 
 # HashiCorp Cloud Platform Dependancies
 
@@ -64,21 +89,6 @@ The following files generate the base GCP infrastructure needed for VPN establis
 | - | - |
 | 1-create-hvn.tf | Creates the target HVN network |
 | 2-create-vault-cluster.tf | Creates Vault |
-
-# AWS Dependancies Part 1
-
-| File | Description |
-| - | - |
-| 3-create-aws-vpc.tf | Creates AWS VPC to connect to HCP Vault |
-| 4-create-aws-subnet.tf | Creates AWS subnet |
-| 5-create-aws-tgw.tf | Creates AWS Transit Gateway |
-| 6-create-aws-tgw-attachment.tf | - |
-| 7-aws-resource-access-manager.tf | - |
-| 8-aws-igw.tf | - |
-| 9-aws-route-table.tf | - |
-| 10-aws-sec-group.tf | - |
-| 11-aws-bastion.tf | - |
-
 
 
 # AWS Dependancies Part 2
