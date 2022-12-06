@@ -26,7 +26,37 @@ A diagram showing this connection is dipicted below.
 - Export these credentials as environment variables or add them to the settings.tf file
 
 **GCP Credentials**
-- Export your credentials to a file called `creds.json` or pass them in with a variable
+- Set your provider with credentials 
+
+```golang
+provider "google" {
+  credentials = file("./credentials.json")
+  project = "hc-bpj83j6dd89wm7956dh2214so"
+  region  = "us-central1"
+  zone    = "us-central1-c"
+}
+```
+
+<b>ALTERNATIVE:</b>
+
+- Set the following environment variables
+
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS=/Users/akalaj/.config/gcloud/akalaj-dev.json
+export GOOGLE_PROJECT=hc-03657a2ab8c84213a402eb28bbb
+```
+
+# GCP Dependancies Part 1
+
+The following files generate the base GCP infrastructure needed for VPN establishment
+
+| File | Description |
+| - | - |
+| 1-gcp-vpc.tf | Creates GCP VPC to connect to HCP Vault |
+| 2-gcp-subnets.tf | Creates GCP Public & Private subnets for bastion-host and app testing. |
+| 3-gcp-ha-vpn-gateway.tf | Creates HA VPN Gateway and 2 HA VPN Interfaces. This interfaces will have 2 IP Address that you'll need to add to the AWS Customer Gateway |
+| 4-gcp-cloud-router.tf | GCP Cloud Router which will advertise GCP Subnets |
+
 
 # HashiCorp Cloud Platform Dependancies
 
@@ -49,11 +79,7 @@ A diagram showing this connection is dipicted below.
 | 10-aws-sec-group.tf | - |
 | 11-aws-bastion.tf | - |
 
-# GCP Dependancies Part 1
 
-| File | Description |
-| - | - |
-| 12-google-ha-vpn-gateway.tf | Creates AWS VPC to connect to HCP Vault |
 
 # AWS Dependancies Part 2
 
