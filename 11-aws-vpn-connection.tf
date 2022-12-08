@@ -43,7 +43,7 @@ variable "aws_vpn_configs" {
 resource "aws_vpn_connection" "vpn-alpha" {
   customer_gateway_id                  = aws_customer_gateway.cgw-alpha.id
   transit_gateway_id                   = aws_ec2_transit_gateway.aws_to_gcp_tgw.id
-  type                                 = aws_customer_gateway.cgw-alpha.type
+  type                                 = aws_customer_gateway.cgw-alpha.type # "ipsec.1"
   tunnel1_phase1_encryption_algorithms = var.aws_vpn_configs.encryption_algorithms
   tunnel2_phase1_encryption_algorithms = var.aws_vpn_configs.encryption_algorithms
   tunnel1_phase1_integrity_algorithms  = var.aws_vpn_configs.integrity_algorithms

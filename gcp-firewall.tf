@@ -1,6 +1,6 @@
 resource "google_compute_firewall" "bastion_firewall" {
   name    = "bastion-firewall"
-  network = data.google_compute_network.my_network.name
+  network = google_compute_network.vpc_network.id
 
   allow {
     protocol = "all"

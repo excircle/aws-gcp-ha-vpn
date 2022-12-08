@@ -16,9 +16,9 @@ resource "google_service_account" "gcp_bastion_svc" {
 
 
 resource "google_compute_instance" "bastion_host" {
-  name         = "bastion-host"
+  name         = "gcp-bastion-host"
   machine_type = "e2-small"
-  zone         = "us-west2-a"
+  zone         = "us-east4-a"
 
   boot_disk {
     initialize_params {
@@ -28,8 +28,8 @@ resource "google_compute_instance" "bastion_host" {
 
   network_interface {
     access_config {}
-    network    = data.google_compute_network.my_network.self_link
-    subnetwork = data.google_compute_subnetwork.my_subnetwork.self_link
+    network    = google_compute_network.vpc_network.self_link
+    subnetwork = google_compute_subnetwork.public.self_link
   }
 
   metadata = {
