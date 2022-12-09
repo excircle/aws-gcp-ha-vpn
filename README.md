@@ -74,7 +74,7 @@ The following files generate the base GCP infrastructure needed for VPN establis
 | 7-aws-customer-gateway.tf | AWS customer gateways which point to the 2 GCP HA VPN Interfaces created in `3-gcp-ha-vpn-gateway.tf`. |
 | 8-aws-internet-gateway.tf | Internet Gateway For Bastion Host |
 | 8-aws-default-route-table.tf | Configuration for default route table |
-| 9-aws-transit-gateway.tf | Transit Gateway for AWS Account
+| 9-aws-transit-gateway.tf | Transit Gateway for AWS Account |
 
 # GCP Dependancies Part 2
 
@@ -82,6 +82,7 @@ The following files generate the base GCP infrastructure needed for VPN establis
 
 | File | Description |
 | - | - |
+| 12-gcp-ext-vpn-gateway.tf | Creates an external VPN gateway with four interfaces/Outside-IPs created in `11-aws-vpn-connection.tf` (2 IPs per connection) |
 
 # HashiCorp Cloud Platform Dependancies
 
