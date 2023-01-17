@@ -1,3 +1,4 @@
+// IKE Version as set per known issue in: (https://cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn)
 resource "google_compute_vpn_tunnel" "tunnels" {
   provider                        = google-beta
   for_each                        = local.external_vpn_gateway_interfaces

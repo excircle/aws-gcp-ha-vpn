@@ -3,7 +3,7 @@ resource "aws_subnet" "main_subnet" {
   cidr_block        = "10.2.2.0/28"
   availability_zone = "us-west-2a"
   tags = {
-    Name     = "akalaj-Oanda-Demo-Subnet"
+    Name     = "akalaj-HAVPN-Demo-Subnet"
     CreateBy = "Terraform"
     Owner    = "Alexander Kalaj"
     Team     = "ISE"

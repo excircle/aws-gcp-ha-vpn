@@ -30,6 +30,7 @@ For information about what CIDR blocks AWS reserves, see Inside tunnel IPv4 CIDR
 
 */
 
+// Borrowed from Spotify (https://github.com/spotify/terraform-google-aws-hybrid-cloud-vpn/blob/master/variables.tf)
 variable "aws_vpn_configs" {
   type        = map(any)
   description = "AWS Tunnels Configs for aws_vpn_connection. This addresses this [known issue](https://cloud.google.com/network-connectivity/docs/vpn/how-to/creating-ha-vpn)."

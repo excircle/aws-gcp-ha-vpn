@@ -8,7 +8,20 @@ data "google_compute_network" "my_network" {
 }
 
 
-// COMMAND | RESOURCE | NICKNAME
+resource "google_compute_firewall" "bastion_firewall" {
+  name    = "bastion-firewall"
+  network = google_compute_network.vpc_network.id
+
+  allow {
+    protocol = "all"
+  }
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22", "80", "8080", "8200-8210", "8000", "514", "515", "3306", "443"]
+  }
+}
+
 resource "google_service_account" "gcp_bastion_svc" {
   account_id   = "akalaj-gcp-bastion-svc"
   display_name = "akalajBastionHost"
@@ -29,7 +42,7 @@ resource "google_compute_instance" "bastion_host" {
   network_interface {
     access_config {}
     network    = google_compute_network.vpc_network.self_link
-    subnetwork = google_compute_subnetwork.public.self_link
+    subnetwork = google_compute_subnetwork.private.self_link
   }
 
   metadata = {

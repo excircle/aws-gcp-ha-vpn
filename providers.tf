@@ -22,6 +22,8 @@ terraform {
 
 provider "hcp" {}
 
+provider "google" {}
+
 provider "aws" {
   region = "us-west-2"
 }

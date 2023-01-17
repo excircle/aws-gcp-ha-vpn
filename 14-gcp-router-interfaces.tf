@@ -1,3 +1,4 @@
+// Associate router to tunnels
 resource "google_compute_router_interface" "interfaces" {
   provider   = google-beta
   for_each   = local.external_vpn_gateway_interfaces

@@ -1,8 +1,11 @@
+// GCP Interfaces
 locals {
   ha_vpn_interfaces_ips = [
     for x in google_compute_ha_vpn_gateway.gateway.vpn_interfaces :
     lookup(x, "ip_address")
   ]
+
+  // Terraform construct to dynamically reference GCP interfaces and respective AWS VPN IPs
   external_vpn_gateway_interfaces = {
     "0" = {
       tunnel_address        = aws_vpn_connection.vpn-alpha.tunnel1_address

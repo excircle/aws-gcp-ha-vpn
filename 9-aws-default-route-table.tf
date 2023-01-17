@@ -19,7 +19,7 @@ resource "aws_default_route_table" "rt_table" {
   }
 
   tags = {
-    Name     = "akalaj-Oanda-Demo-route-table"
+    Name     = "akalaj-StSt-Demo-route-table"
     CreateBy = "Terraform"
     Owner    = "Alexander Kalaj"
     Team     = "ISE"

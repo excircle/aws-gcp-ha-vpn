@@ -1,4 +1,4 @@
-// 
+// Connects HCP to VPC's Transit Gateway
 resource "hcp_aws_transit_gateway_attachment" "aws_hcp_tgw_attachment" {
   depends_on = [
     aws_ram_principal_association.hcp_ram,

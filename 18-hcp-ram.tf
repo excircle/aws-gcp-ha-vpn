@@ -1,4 +1,4 @@
-// "Resource Access Manager" (RAM) which shares HVN Account ID & Transit GW ARN
+// Create AWS "Resource Access Manager" (RAM) in Customer VPC
 resource "aws_ram_resource_share" "vault_ram" {
   name                      = "hcp-vault-ram"
   allow_external_principals = true

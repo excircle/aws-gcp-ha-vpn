@@ -1,7 +1,7 @@
-resource "google_compute_subnetwork" "public" {
-  name          = "public"
+resource "google_compute_subnetwork" "private" {
+  name          = "private"
   ip_cidr_range = "10.1.1.0/24"
   region        = "us-east4"
-  project       = "hc-03657a2ab8c84213a402eb28bbb"
+  project       = data.google_project.project.project_id
   network       = google_compute_network.vpc_network.id
 }
